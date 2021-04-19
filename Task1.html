@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+</head>
+<body>
+    <h2>Input your length of array</h2> <input type="text" id="input"><br><br>
+    <button id="create" onclick="createClick()">Create the array</button>
+    <p> [ <span id="result"></span> ] </p>
+    <p>Total of odd Element in array = <input type="number" id="result2" disabled> </p>
+</body>
+<script>
+    function createClick() {
+    let z = document.getElementById("input").value;
+    arrayCreate(z);
+    }
+    function arrayCreate(z) {
+        let array = [];
+        let x = 0;
+        for (let i = 0; i < z; i++) {
+            array[i] = Math.ceil(Math.random() * (10 - 1) + 1) * x;
+            console.log(array[i] + " added to the array at Index " + i);
+            x++;
+        }
+        console.log(array);
+        document.getElementById("result").innerHTML = array;
+
+
+        let total = 0;
+        for (let i = 0; i < z; i++) {
+            if(array[i]%2 !== 0) {
+                total = total + array[i];
+            }
+        }
+        console.log(total);
+        document.getElementById("result2").value = total;
+    }
+
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task3</title>
+</head>
+<body>
+    <button onclick="" disabled>Create the random array </button>
+    <button onclick="check()">Check and Find a PerfectionNums </button>
+    <p>[<span id="result"></span>]</p>
+
+</body>
+<script>
+    let y = prompt("Input your length of the array you want to create?!");
+    arrayCreate(y);
+
+    function arrayCreate(y) {
+        let array = [];
+        let x = 0;
+        for (let i = 0; i < y; i++) {
+            array[i] = Math.ceil(Math.random() * (10 - 1) + 1) * x;
+            console.log(array[i] + " added to the array at Index " + i);
+            x++;
+        }
+        console.log(array);
+        document.getElementById("result").innerHTML = array;
+    }
+
+    function isPerfect(num) {
+        let sum = 0;
+        for (let i = 1; i < num; i++) {
+            if (num % i === 0)
+                sum = sum + i;
+        }
+        if (sum === num) return true;
+        return false;
+    }
+
+    function check() {
+        for (let i = 0; i < y.length; i++) {
+            if(isPerfect(i) ===true) {
+                console.log(i);
+            }
+        }
+    }
+</script>
+</html>

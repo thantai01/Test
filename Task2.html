@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let num = +prompt("Input your number you want to check?!")
+    function isPerfect(num) {
+        let sum = 0;
+        for (let i = 1; i < num; i++) {
+            if (num % i === 0)
+                sum = sum + i;
+        }
+        if (sum === num) return true;
+        return false;
+    }
+    console.log(isPerfect(num));
+    if( isPerfect(num) ===true) {
+        alert("The number " + num + " is PerfectionNums!")
+    }   else {
+        alert("The number " + num + " is not a PerfectionNums!")
+    }
+
+
+</script>
+</html>
