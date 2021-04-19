@@ -3,54 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Task5</title>
+
     <style>
         #list {
             border-collapse: collapse;
+            border-color: whitesmoke;
+            width: 50%;
+        }
+        #list tr {
+            width: 20%;
+        }
+        #list tr:nth-child(odd) {
+            background-color: #d6d6d6;
+        }
+        #list tr td {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <table id="list" border="1"></table>
+    <div>
+        <button onclick="addCustomer()">Add Customers</button>
+    </div>
+    <hr>
+    <div>
+        <table id="list" border="1px" style="border-color: whitesmoke"></table>
+    </div>
+    <p><span id="edit"></span></p>
+    <br>
 </body>
-<script>
-
-    class Customer {
-        constructor(_id, _name, _dob, _gender, _address) {
-            this.id = _id;
-            this.name = _name;
-            this.dob = _dob;
-            this.gender = _gender;
-            this.address = _address;
-        }
-    }
-
-    let customers = [];
-
-    function addCustomer() {
-        let id = prompt('Input ID');
-        let name = prompt('Input Name');
-        let dob = prompt('Input Date of Birth');
-        let gender = prompt('Input Gender');
-        let address = prompt('Input Address');
-
-        customers.push();
-        listShow();
-    }
-
-
-
-    function listShow() {
-        let box = "";
-        for (let i = 0; i <customers.length; i++) {
-            box = box +'<tr>' +
-                '<td>'+ customers[i].id +'</td>' +
-                '<td>'+ customers[i].name +'</td>' +
-                '<td>'+ customers[i].dob +'</td>' +
-                '<td>'+ customers[i].gender +'</td>' +
-                '<td>'+ customers[i].address +'</td>' + '</tr>';
-        }
-        document.getElementById("list").innerHTML = box;
-    }
-    showmanagement();
-</script>
+<script src="Task5.js"></script>
 </html>
