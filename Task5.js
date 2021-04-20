@@ -65,8 +65,18 @@ function deleteItems(inDex) {
 }
 
 function showEditbox(inDex) {
-    let box = '';
-    box = '<input type="text" id= "editProduct" value=' + customers[inDex].name+ '"><button> Save </button>"';
+        let box = '';
+        box += '<tr>';
+        box += '<td><input type="text" id="id"/>' + customers[inDex].id + '</td> ID<br>';
+        box += '<td><input type="text" id="name"/></td> Name<br>';
+        box += '<td><input type="text" id="dob"/></td> Birthday<br>';
+        box += '<td><input type="text" id="gender"/></td> Gender<br>';
+        box += '<td><input type="text" id="address"/></td> Address<br>';
+        box += '<td><button id="" onclick="saveChange()" >Save</button></td><br>';
 
     document.getElementById('edit').innerHTML = box;
+}
+
+function saveChange() {
+
 }
